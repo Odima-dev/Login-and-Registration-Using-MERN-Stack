@@ -1,6 +1,9 @@
  import { useState } from "react";
 
  function Signup() {
+    const [name, setName] = useState()
+    const [email, setEmail] = useState()
+    const [password, setPassword] = useState()
 
     return (
         <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
