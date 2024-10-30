@@ -12,16 +12,20 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:3001/login', {name, email, password})
-        .then(result => console.log(result))
-        navigate('/home')
+        axios.post('http://localhost:3001/login', {email, password})
+        .then(result => {
+            console.log(result)
+            if(result.data === "Success") {
+                navigate('/home')
+            }
+        })
         .catch(err=> console.log(err))
     }
 
     return(
         <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
             <div className="bg-white p-3 rounded w-25">
-                <h2>Register</h2>
+                <h2>Login</h2>
                 <form onSubmit={handleSubmit}>
                     <div div className="mb-3">
                         <label htmlFor="email">
